@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="https://aspectcomputers.org/wp-includes/css/dashicons.min.css?ver=5.5.1" media="all">
+  <link rel="stylesheet" href="" media="all">
     <style>
         body{
           font-family: Roboto;
+          margin:0;
         }
         h1, h3 {
             color: #4B4949;
@@ -14,25 +15,31 @@
         }
         p {
           color: #7A7A7A;
+          line-height: 1.8 ;
         }
 
         .header {
-          background-image:url('main.jpg');
-          min-height: 480px;
+          background: url('main.png') no-repeat scroll center top transparent;
+          height: 681px;
+          width: 100%;
+          z-index: 0;
           background-attachment: fixed;
-          background-position: center;
+          background-position: 0px 0px;
           background-repeat: no-repeat;
-          background-size: cover;
         }​
 
-        menu {
-          float: left;
-          color: #000000;
-          text-align: right;
-          padding: 16px 16px;
-          text-decoration: none;
-          font-size: 17px;
+        .menu {
+          overflow: hidden;
+          background-color: #333;
         }     
+        .menu a{
+          float: right;
+          color: #ffffff;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 20px;    
+        }
     
         img{
           width: 320px;
@@ -44,30 +51,47 @@
           background-origin:padding-box;
         }
     </style>
+
+    <!-- this is the top menu -->
     <body>
         <div id="header" class="menu">
-            <h3>STAMV | 
+            <a href="#tools" style="color:rgb(252, 163, 17)">Tools</a>
             <a class="active" href="#index">Home</a>
             <a href="/stamv/about.html">About</a>
             <a href="/stamv/calendar.html">Calendar</a>
-            <a href="#tools">Tools</a>
             </h3>
           </div>
 
-
+   <!-- this just marks where the header is -->
         <div class="header">
-          <h1>a header</h1>
         </div>
-        
-        <h1>What we do</h1>
+
+
+    <!-- this is everything below the header -->
+        <h1 style="position:relative; TOP:50px;">What we do</h1>
         <br>
         <br>
         <div id="info">
-            <img src="study.jpg" alt="study" style="position:absolute; TOP:650px; LEFT:510px;">
-            <h2 style="position:absolute; TOP:650px; LEFT:890px;">Our Mission</h3>
-             <p style="position:absolute; TOP:750px; LEFT:890px;"> Our club is focused on creating a website focused around providing helpful study toolsfor students such as customizable quizzes and flashcards. 
-These quizzes and flashcards will be sharabale so students can use these quizzes in study groups, allowing for a large amount of people to 
-benefit from them. Additionally, this website will be public to allow anyone to be able to use our programs at no cost.
+            <img src="study.jpg" alt="study" style="position:absolute; TOP:850px; LEFT:410px;">
+            <h2 style="position:absolute; TOP:850px; LEFT:890px;">Our Mission</h2>
+             <p style="position:absolute; TOP:900px; LEFT:890px;"> Our club is focused on creating a website focused around providing helpful study tools <br>
+                                                                  for students such as customizable quizzes and flashcards. These quizzes and flashcards<br> 
+                                                                  will be shareable so students can use these tools in study groups, allowing for a large <br>
+                                                                  amount of people to benefit from them. Additionally, this website will be public to allow <br>
+                                                                  anyone to be able to use our programs at no cost.
+              <h2 style="position:absolute; TOP:1200px; LEFT:410px;">The Programs we Make</h2>
+              <p style="position:absolute; TOP:1250px; LEFT:410px;">Our website will be equipped with a multitude of programs and tools designed to help students <br>
+                                                                    learn. So far we are planning on implementing a flash card program that will help students memorize <br>
+                                                                    definitions of words or ideas and other similar programs. We will also be using public input to <br>
+                                                                    generate ideas on which methods and studying devices will be most effective. The tools will be made <br>
+                                                                    using HTML and java.</p>"
+              <h2 style="position:absolute; TOP:1500px; LEFT:890px;">Our Motive</h2>
+              <p style="position:absolute; TOP:1550px; LEFT:890px;">At STAMV we have 1 main motive. This motive is to provide a reliable way to learn and study for <br>
+                                                                   school students by creating programs on our website. Because quizlet no longer offers free custom quizzes, <br>
+                                                                   we felt it best to provide a solution by making our own platform to make and share quizzes, among other <br>
+                                                                   things beneficial to studying and helping students learn. <br><br><br><br>
+              </p>
+
 </p>
         </div>
         
