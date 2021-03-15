@@ -12,10 +12,12 @@
         }
         h2 {
           color: #4B4949;
+          text-align: center;
         }
         p {
           color: #000000;
           line-height: 1.8 ;
+
         }
 
         .header {
@@ -23,11 +25,14 @@
           height: 681px;
           width: 100%;
           z-index: 0;
+          padding: 0;
+          margin: 0;
           background-attachment: fixed;
-          background-position: 0px 0px;
-          background-repeat: no-repeat;
+          background-repeat:no-repeat;
+          background-position: center 0px;
         }​
 
+/* menu bar */
         .menu {
           overflow: hidden;
           background-color: #333;
@@ -40,7 +45,7 @@
           text-decoration: none;
           font-size: 20px;    
         }
-    
+/* image specifications */
         img{
           width: 320px;
           height: 220px;
@@ -49,16 +54,57 @@
           background-repeat:no-repeat;
           background-size:cover;
           background-origin:padding-box;
+          background-position:center;
+        }
+/* first section */
+        #study1 {
+           float: left ;
+        }
+        #mission{
+          float: right;
+        }
+        #ourmission {
+          width: 1000px ;
+          max-width: 100% ;
+          margin-left: auto ;
+          margin-right: auto ;
+        }
+/* second section */
+        #study2 {
+           float: right ;
+        }
+        #programs{
+          float: left;
+        }
+        #programswemake {
+          width: 1000px ;
+          max-width: 100% ;
+          margin-left: auto ;
+          margin-right: auto ;
+        }
+/* third section */
+        #study3 {
+           float: left ;
+        }
+        #motive{
+          float: right;
+        }
+        #ourmotive {
+          width: 1000px ;
+          max-width: 100% ;
+          margin-left: auto ;
+          margin-right: auto ;
         }
     </style>
 
     <!-- this is the top menu -->
     <body>
         <div id="header" class="menu">
-            <a href="#tools" style="color:rgb(252, 163, 17)">Tools</a>
-            <a class="active" href="#index">Home</a>
-            <a href="/stamv/about.html">About</a>
+            <a href="#tools">Tools</a>
             <a href="/stamv/calendar.html">Calendar</a>
+            <a href="/stamv/about.html">About</a>
+            <a class="active" href="#index" style="color:rgb(252, 163, 17)">Home</a>
+
             </h3>
           </div>
 
@@ -68,35 +114,43 @@
 
 
     <!-- this is everything below the header -->
-        <h1 style="position:relative; TOP:50px;">What we do</h1>
+    <!-- first section -->
+        <h1>What we do</h1>
         <br>
         <br>
-        <div id="info">
-            <img src="study1.jpeg" alt="image 1" style="position:absolute; TOP:850px; LEFT:410px;">
-            <h2 style="position:absolute; TOP:850px; LEFT:890px;">Our Mission</h2>
-             <p style="position:absolute; TOP:900px; LEFT:890px;"> Our club is focused on creating a website focused around providing helpful <span style="font-weight:bold;">study tools</span> <br>
+        <div id="ourmission">
+            <h2 style="position:relative; RIGHT:5px; TOP:15px;">Our Mission</h2>
+            <img style="position:relative; RIGHT:40px; BOTTOM:50px;" id="study1" src="study1.jpeg" alt="image 1">
+             <p style="position:relative; LEFT:60px; TOP:0px;" id="mission"> Our club is focused on creating a website focused around providing helpful <span style="font-weight:bold;">study tools</span> <br>
                                                                   for students such as <b>customizable quizzes</b> and <b>flashcards</b>. These quizzes and flashcards<br> 
                                                                   will be shareable so students can use these tools in study groups, allowing for a large <br>
                                                                   amount of people to benefit from them. Additionally, this website will be public to allow <br>
-                                                                  anyone to be able to use our programs at <b>no cost</b>.
-<!--               <img src="study2.jpeg" alt="image 2" style="position:absolute; TOP:1200px; LEFT:1400px;"> -->
-              <h2 style="position:absolute; TOP:1200px; LEFT:410px;">The Programs we Make</h2>
-              <p style="position:absolute; TOP:1250px; LEFT:410px;">Our website will be equipped with a multitude of programs and tools designed to help students <br>
-                                                                    learn. So far we are planning on implementing a <b>flash card program</b> that will help students <b>memorize <br>
-                definitions of words</b> or ideas and other similar programs. We will also be using public input to <br>
-                                                                    generate ideas on which methods and studying devices will be most effective. The tools will be made <br>
-                using <b>HTML</b> and <b>java</b>.</p>
-              <img src="study2.jpeg" alt="image 2" style="position:absolute; TOP:1200px; LEFT:1200px;">
-              <img src="study3.jpeg" alt="image 3" style="position:absolute; TOP:1500px; LEFT:410px;">
-              <h2 style="position:absolute; TOP:1500px; LEFT:890px;">Our Motive</h2>
-              <p style="position:absolute; TOP:1550px; LEFT:890px;">At STAMV we have 1 main motive. This motive is to provide a <b>reliable way to learn and study for <br>
-                school students</b> by creating programs on our website. Because quizlet no longer offers free custom quizzes, <br>
-                                                                   we felt it best to provide a solution by making our own platform to <b>make and share quizzes</b>, among other <br>
-                                                                   things beneficial to studying and helping students learn. <br><br><br><br>
-              </p>
+                                                                  anyone to be able to use our programs at <b>no cost</b>.</p>
+                                                                  <div style="clear: both;"></div>
 
-</p>
+             </div>
+    <!-- second section -->
+        <div id="programswemake">
+              <h2 style="position:relative; RIGHT:412px; TOP:95px;">The Programs we Make</h2>
+              <img style="position:relative; LEFT:100px; TOP:55px;" src="study2.jpeg" id="study2" alt="image 2">
+
+              <p id="programs" style="position:relative; RIGHT:40px; BOTTOM:130px;">Our website will be equipped with a multitude of programs and tools designed to help students <br>
+                                                                    learn. So far we are planning on implementing a <b>flash card program</b> that will help students <b>memorize <br>
+                                                                    definitions of words</b> or ideas and other similar programs. We will also be using public input to <br>
+                                                                    generate ideas on which methods and studying devices will be most effective. The tools will be made <br>
+                                                                    using <b>HTML</b> and <b>java</b>.</p>
+                                                                    <div style="clear: both;"></div>
+                                                                  </div>
+    <!-- third section -->
+        <div id="ourmission">
+             <h2 style="position:relative; RIGHT:5px; TOP:15px;">Our Motive</h2>
+              <img style="position:relative; RIGHT:40px; BOTTOM:50px;" src="study3.jpeg" alt="image 3" id="study3">
+              <p style="position:relative; LEFT:115px; TOP:0px;" id="motive"> At STAMV we have 1 main motive. This motive is to provide students with a reliable way to learn <br>
+                                                                              and study by creating programs gearead towards this on our website. Because quizlet no longer<br> 
+                                                                              offers free custom quizzes without a premium account, we felt it best to provide a solution by<br>
+                                                                              making our own platform to make and share quizzes, among other things beneficial to<br>
+                                                                              studying and helping students learn.</p>
+                                                                              <div style="clear: both;"></div>
         </div>
-        
     </body>
 </html>
