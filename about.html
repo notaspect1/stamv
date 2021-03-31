@@ -1,58 +1,235 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="" media="all">
     <style>
-        h1, h2, h3, p {
+
+
+@font-face {
+        font-family: 'Roboto';
+        src: url(fonts/Roboto-Regular.ttf);
+        font-style: normal;
+        font-weight: 300;
+      }
+        body{
+          font-family: Roboto;
+          font-weight: 300;
+          margin:0;
+        }
+        h1, h3 {
+            color: #4B4949;
             text-align: center;
         }
-        
-        .names {
-            font-family: Roboto;
-            font-size: 20px;
-            color: rgba(0, 0, 255, 0.5);;
-            
+        h2 {
+          color: #4B4949;
         }
+        p {
+          color: #000000;
+          line-height: 1.8 ;
+        }
+
+
+        .header {
+          background: url('about.png') no-repeat scroll center top transparent;
+          height: 500px;
+          width: 100%;
+          z-index: 0;
+          padding: 0;
+          margin: 0;
+          background-attachment: fixed;
+          background-repeat:no-repeat;
+          background-position: center 0px;
+        }​
+
+/* menu bar */
+        .menu {
+          overflow: hidden;
+          background-color: #333;
+        }     
+        .menu a{
+          float: right;
+          color: #ffffff;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 20px;    
+        }
+/* image specifications */
+        img{
+          width: 320px;
+          height: 220px;
+          box-sizing: border-box;
+          border-radius: 8px;
+          background-repeat:no-repeat;
+          background-size:cover;
+          background-origin:padding-box;
+          background-position:center;
+        }
+/* first section */
+        #text {
+           float: center ;
+           text-align: center;
+        }
+        #whoarewe {
+          width: 1000px ;
+          max-width: 100% ;
+          margin-left: auto ;
+          margin-right: auto ;
+        }
+/* first section */
+        #image1{
+          float:left;
+        }
+        #text1{
+          float: left;
+        }
+
+        #format1 {
+          width: 1000px ;
+          max-width: 100% ;
+          margin-left: auto ;
+          margin-right: auto ;
+        }
+/* second section */
+        #image2 {
+           float: left ;
+        }
+        #text2{
+          float: left;
+        }
+        #format2 {
+          width: 1100px ;
+          max-width: 100% ;
+          margin-left: auto ;
+          margin-right: auto ;
+        }
+      
         footer {
         text-align: center;
         padding: 3px;
         background-color: #E5E5E5;
         color: #FFFFFF;
-        } 
+        }
     </style>
+
+
+
+    <!-- this is the top menu -->
     <body>
-        <div class="menu">
-            <h3>STAMV | 
-            <a class="active" href="/stamv/index.html">Home</a>
-            <a href="/stamv/about.html">About</a>
-            <a href="/stamv/calendar.html">Calendar</a>
+        <div id="header" class="menu">
             <a href="#tools">Tools</a>
+            <a href="/stamv/calendar.html">Calendar</a>
+            <a hreƒf="/stamv/about.html" style="color:rgb(252, 163, 17)">About</a>
+            <a class="active" href="#index" >Home</a>
+
             </h3>
+          </div>
+
+   <!-- this just marks where the header is -->
+        <div class="header">
         </div>
-    <br>
-    <br>
-    <div class="names">
-        <p>Dylan Robles: Sophomore @ MVHS, President</p>
-        <p>Lucian Duncker: Sophomore @ MVHS, Vice President.</p>
-        <p>Joey Davancaze: Sophomore @ MVHS, Treasurer.</p>
-        <p>Andrew Lint: Sophomore @ MVHS, Secretary.</p>
-        <p>Brandon Lien: Sophomore @ MVHS, Community Service Coordinator/PR.</p>
-<!--         <p>James Park: Sophomore @ MVHS, Member working on CSS. </p> -->
-        <p>Club Advisor: Profe Stucker</p>
-    </div>    
-    <div>
-        <p>Our club is focused on creating a website focused around providing helpful study tools for students<br>
-        such as customizable practice tests and flashcards. Quizlet no longer offers practice tests which<br>
-        a reason we are aiming to implement them into our website.</p>
-        </p>  
-    </div>
-       
+
+
+    <!-- this is everything below the header -->
+    <!-- Lines 
+    <link rel="stylesheet" href="" media="all">
+    <svg>
+      <rect style="position:relative; RIGHT:40px; TOP:0px;" x="100" y="100" width="350" height="2" style=stroke:orange />
+    </svg>
+    -->
+    <!-- info section -->
+        <br><br>
+        <h2 style="text-align: center;">Who Are We?</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div id="whoarewe">
+             <p style="position:relative; LEFT:0px; BOTTOM:100px;" id="text"> We are a group of a high school students that came together because of our passion for coding<br>
+                                                                              and desire to help others. We wish to do so by creating study programs which can help students<br>
+                                                                              prepare for quizzes, tests, and other academic assignments. We created both this website <br>
+                                                                              and the programs from scratch. We used HTML and CSS for the website and Java to create the <br> 
+                                                                              programs. </p>
+                                                                  <div style="clear: both;"></div>
+        </div>
+
+          <!-- first section -->
+             <br><br><br><br><br><br><br><br><br><br>
+             <div id="format1">
+              <img style="position:relative; RIGHT:40px; BOTTOM:80px;" id="image1" src="study1.jpeg" alt="image 1">
+                <h2 style="position:relative; LEFT: 50px; BOTTOM:95px;" id="text1">Dylan Robles <span style="font-family:'Times New Roman', Times, serif; color:rgb(252, 163, 17); font-size: 30px;">|</span> 
+                <span style="font-weight: normal;">President</span></h2>
+                 <p style="position:relative; LEFT:50px; BOTTOM:100px;" id="text1"> My name is Dylan Robles and I am the President of Study Tools at Mountain View<br>
+                                                                                    (STAMV). One of my passions is coding and I always wanted to use this in helping<br>
+                                                                                    others. Being a student at MVHS, I noticed that studying effectively can be <br>
+                                                                                    challenging. I saw a need to address this issue, so I got together with Lucian<br>
+                                                                                    and we decided to create STAMV. <br>
+                                                                                    </p><div style="clear: both;"></div>
     
-<!-- Get some update page for the website -->
-<!-- a socails page, mabey a twitter for the website so we can post updates if the wesbite is down-->
-<!-- suggestions section?-->
-        
-    <footer>
+                 </div>
+        <!-- second section -->
+        <br><br><br>
+        <div id="format2">
+          <img style="position:relative; LEFT:750px; TOP:0px;" src="study2.jpeg" id="image2" alt="image 2">
+          <h2 style="position:relative; RIGHT:330px; BOTTOM:0px;" id="text2">Lucian Duncker <span style="font-family:'Times New Roman', Times, serif; color:rgb(252, 163, 17); font-size: 30px;">|</span>
+          <span style="font-weight: normal;">Vice-President</span></h2>
+          <p style="position:relative; RIGHT:330px; BOTTOM:0px;" id="text2">My name is Dylan Robles and I am the President of Study Tools at Mountain View<br>
+                                                                            (STAMV). One of my passions is coding and I always wanted to use this in helping<br>
+                                                                            others. Being a student at MVHS, I noticed that studying effectively can be <br>
+                                                                            challenging. I saw a need to address this issue, so I got together with Lucian<br>
+                                                                            and we decided to create STAMV. <br>
+                                                                          </p><div style="clear: both;"></div>
+          </div>
+        <!-- third section -->
+        <br><br><br><br><br><br><br><br><br><br>
+        <div id="format1">
+          <img style="position:relative; RIGHT:40px; BOTTOM:80px;" id="image1" src="study1.jpeg" alt="image 1">
+            <h2 style="position:relative; LEFT: 50px; BOTTOM:95px;" id="text1">Dylan Robles <span style="font-family:'Times New Roman', Times, serif; color:rgb(252, 163, 17); font-size: 30px;">|</span> 
+            <span style="font-weight: normal;">President</span></h2>
+            <p style="position:relative; LEFT:50px; BOTTOM:100px;" id="text1"> My name is Dylan Robles and I am the President of Study Tools at Mountain View<br>
+                                                                              (STAMV). One of my passions is coding and I always wanted to use this in helping<br>
+                                                                              others. Being a student at MVHS, I noticed that studying effectively can be <br>
+                                                                              challenging. I saw a need to address this issue, so I got together with Lucian<br>
+                                                                              and we decided to create STAMV. <br>
+                                                                              </p><div style="clear: both;"></div>
+
+            </div>
+
+        <!-- fourth section -->
+        <br><br><br>
+        <div id="format2">
+          <img style="position:relative; LEFT:750px; TOP:0px;" src="study2.jpeg" id="image2" alt="image 2">
+          <h2 style="position:relative; RIGHT:330px; BOTTOM:0px;" id="text2">Lucian Duncker <span style="font-family:'Times New Roman', Times, serif; color:rgb(252, 163, 17); font-size: 30px;">|</span>
+          <span style="font-weight: normal;">Vice-President</span></h2>
+          <p style="position:relative; RIGHT:330px; BOTTOM:0px;" id="text2">My name is Dylan Robles and I am the President of Study Tools at Mountain View<br>
+                                                                            (STAMV). One of my passions is coding and I always wanted to use this in helping<br>
+                                                                            others. Being a student at MVHS, I noticed that studying effectively can be <br>
+                                                                            challenging. I saw a need to address this issue, so I got together with Lucian<br>
+                                                                            and we decided to create STAMV. <br>
+                                                                          </p><div style="clear: both;"></div>
+        </div>
+
+         <!-- fifth section -->
+         <br><br><br><br><br><br><br><br><br><br>
+         <div id="format1">
+          <img style="position:relative; RIGHT:40px; BOTTOM:80px;" id="image1" src="study1.jpeg" alt="image 1">
+            <h2 style="position:relative; LEFT: 50px; BOTTOM:95px;" id="text1">Dylan Robles <span style="font-family:'Times New Roman', Times, serif; color:rgb(252, 163, 17); font-size: 30px;">|</span> 
+            <span style="font-weight: normal;">President</span></h2>
+             <p style="position:relative; LEFT:50px; BOTTOM:100px;" id="text1"> My name is Dylan Robles and I am the President of Study Tools at Mountain View<br>
+                                                                                (STAMV). One of my passions is coding and I always wanted to use this in helping<br>
+                                                                                others. Being a student at MVHS, I noticed that studying effectively can be <br>
+                                                                                challenging. I saw a need to address this issue, so I got together with Lucian<br>
+                                                                                and we decided to create STAMV. <br>
+                                                                               </p><div style="clear: both;"></div>
+
+             </div>
+
+        <!-- extra spacing before footer -->
+        <br><br><br><br><br><br><br><br>
+        <footer>
           <p>Study Tools @ MVHS | By students, for students</p>
-    </footer>
+        </footer>
     </body>
 </html>
