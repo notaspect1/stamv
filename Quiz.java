@@ -13,12 +13,16 @@ class Quiz{
       }
     }
     
+    removeQuestion(questionIndex){
+       questionList.splice(questionIndex, 1);
+    }
+  
     addQuestion(questionAdded){
       questionList.push(questionAdded);
     }
   
     get currentQuestion(){
-       return guestionList[currentQuestionIndex]; 
+       return questionList[currentQuestionIndex]; 
     }
   
     nextQuestion(){
