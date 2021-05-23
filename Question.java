@@ -33,6 +33,9 @@ class Question{
   get correctAnswer(){
     return correctAnswerIndexes;
   }
+  set correctAnswer(newAnswers){
+    correctAnswerIndexes = newAnswers;
+  }
   
    public isCorrect(){
      if(correctAnswerIndexes.length != selectedList.length){
@@ -45,7 +48,8 @@ class Question{
      }
      return true;
    }
-  
+   
+   
    
   
   
