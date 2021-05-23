@@ -1,7 +1,7 @@
-class Quiz{
+public class Quiz{
   
-    var questionList = [];
-    var currentQuestionIndex = 0;
+    private var questionList = [];
+    private var currentQuestionIndex = 0;
     
     constructor(){
       questionList.push(new Question()); 
@@ -13,11 +13,11 @@ class Quiz{
       }
     }
     
-    removeQuestion(questionIndex){
+    public removeQuestion(questionIndex){
        questionList.splice(questionIndex, 1);
     }
   
-    addQuestion(questionAdded){
+    public addQuestion(questionAdded){
       questionList.push(questionAdded);
     }
   
@@ -25,12 +25,12 @@ class Quiz{
        return questionList[currentQuestionIndex]; 
     }
   
-    nextQuestion(){
+    public nextQuestion(){
       currentQuestionIndex++; 
       //code here will be added later to switch questions
     }
   
-    previousQuestion(){
+    public previousQuestion(){
       currentQuestionIndex--; 
       //code here will be added later to switch questions
     }
