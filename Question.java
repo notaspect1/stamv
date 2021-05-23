@@ -1,5 +1,5 @@
 
-class Question{
+public class Question{
   
     private var question = "";
     private var responseList = [];
@@ -23,17 +23,17 @@ class Question{
    set currentQuestion(newQuestion){
      question = newQuestion;
    }
-   get response(){
+   get responses(){
      return responseList;
    }
    get selected(){
      return selectedList;
      
    }
-  get correctAnswer(){
+  get correctAnswers(){
     return correctAnswerIndexes;
   }
-  set correctAnswer(newAnswers){
+  set correctAnswers(newAnswers){
     correctAnswerIndexes = newAnswers;
   }
   
@@ -49,7 +49,18 @@ class Question{
      return true;
    }
    
-   
+   public addResponse(response){
+     responseList.push(response);
+   }
+   public removeResponse(index){
+     responseList.splice(index, 1);
+   }
+   public selectQuestion(response){
+     selectedList.push(responseList.indexOf(response));
+   }
+  public unselectQuestion(response){
+     selectedList.remove(selectedList.indexOf(responseList.indexOf(response)),1);
+   }
    
   
   
