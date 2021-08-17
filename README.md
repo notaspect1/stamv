@@ -1,3 +1,3 @@
 # stamv
-## aoskldfhj sdopfh safh sapdfhsadpo
-asdfsadfsafsdfsaf
+
+This is the src for the stamv club site.
