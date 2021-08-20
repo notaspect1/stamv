@@ -89,8 +89,7 @@ function refillList() {
         <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
         <div class="definitions">
             <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-            <textarea type="text" class="definition" name="definition/num/" id="definition/num/">${definition}
-            </textarea>
+            <textarea type="text" class="definition" name="definition/num/" id="definition/num/">${definition}</textarea>
         </div> 
         </div>
         `
