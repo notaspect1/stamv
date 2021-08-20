@@ -137,6 +137,7 @@ textarea, input, select, option {
 textarea {
     width: 500px;
     height: 100px;
+    max-width: 100%;
 }
 
 #break1 {
@@ -167,7 +168,7 @@ textarea {
     padding: 20px;
 }
 
-.deleteButton {
+.deleteQuestion {
     float: right;
     margin-right: 20px;
     display: block;
