@@ -3,7 +3,7 @@
 
 let QuizName = "Default"
 let Description = "Lorem ipsum dolor sit am tempor inciliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui"
-let Visibility = 1
+let Visibility = 1 // is bugged fix later low priotity
 let amount = 0
 /* 
 
@@ -25,13 +25,17 @@ document.getElementById("visiblityDropdown").value = Visibility
 
 let addQuestionTemplate = `      
 <div id="question${amount}" class="questions">
-    <h3>Question ${amount}</h3>
-    <label class="fakeLabel" for="term${amount}">Term</label> 
-    <input type="text" name="quizName" id="quizName">
+    <h3>${amount}</h3>
     <button class="deleteButton">Delete</button>
+
+    <div class="terms">
+        <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term${amount}" id="term${amount}"></textarea>
+        <label class="fakeLabel" for="term${amount}">Term</label> 
+    </div>
+
     <div class="definitions">
+        <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition${amount}" id="definition${amount}"></textarea>
         <label class="fakeLabel" for="definition${amount}">Definition</label> 
-        <textarea type="text" class="definition" name="definition${amount}" id="definition${amount}"></textarea>
     </div> 
 </div>
 `;
@@ -51,13 +55,17 @@ document.getElementById("addQuestion").onclick = function () {
     amount++
     addQuestionTemplate = `      
     <div id="question/num/" class="questions">
-        <h3>Question /num/</h3>
-        <label class="fakeLabel" for="term/num/">Term</label> 
-        <input type="text" name="term/num/" id="term/num/">
+        <h3>/num/</h3>
         <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+
+        <div class="terms">
+            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/"></textarea>
+            <label class="fakeLabel" for="term/num/">Term</label> 
+        </div>
+
         <div class="definitions">
+            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/"></textarea>
             <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-            <textarea type="text" class="definition" name="definition/num/" id="definition/num/"></textarea>
         </div> 
     </div>
     `;
@@ -83,13 +91,18 @@ function refillList() {
         console.log(definition)
         questionsList[i] = `
         <div id="question/num/" class="questions">
-        <h3>Question /num/</h3>
-        <label class="fakeLabel" for="term/num/">Term</label> 
-        <input type="text" name="term/num/" id="term/num/" value="${term}">
+        <h3>/num/</h3>
         <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+
+        <div class="terms">
+            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/">${term}</textarea>
+            <label class="fakeLabel" for="term/num/">Term</label> 
+        </div>
+
+
         <div class="definitions">
+            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">${definition}</textarea>
             <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-            <textarea type="text" class="definition" name="definition/num/" id="definition/num/">${definition}</textarea>
         </div> 
         </div>
         `
