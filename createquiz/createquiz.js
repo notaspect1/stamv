@@ -1,9 +1,9 @@
 //there should be a function to fill in previous questions witht he same id im thinking base 64 8 digit thing
 
 
-let QuizName = "Default"
-let Description = "Lorem ipsum dolor sit am tempor inciliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui"
-let Visibility = 1 // is bugged fix later low priotity
+let QuizName = ""
+let Description = ""
+let Visibility = "Public" 
 let amount = 0
 /* 
 
@@ -25,8 +25,10 @@ document.getElementById("visiblityDropdown").value = Visibility
 
 let addQuestionTemplate = `      
 <div id="question${amount}" class="questions">
-    <h3>${amount}</h3>
-    <button class="deleteButton">Delete</button>
+    <div class="top-area">
+        <h3>${amount}.</h3>
+        <button class="deleteButton">Delete</button>
+    <div>
 
     <div class="terms">
         <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term${amount}" id="term${amount}"></textarea>
@@ -55,8 +57,10 @@ document.getElementById("addQuestion").onclick = function () {
     amount++
     addQuestionTemplate = `      
     <div id="question/num/" class="questions">
-        <h3>/num/</h3>
-        <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+        <div class="top-area">
+            <h3>/num/.</h3>
+            <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+        </div>
 
         <div class="terms">
             <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/"></textarea>
@@ -91,19 +95,21 @@ function refillList() {
         console.log(definition)
         questionsList[i] = `
         <div id="question/num/" class="questions">
-        <h3>/num/</h3>
-        <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+            <div class="top-area">
+                <h3>/num/.</h3>
+                <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+            </div>
 
-        <div class="terms">
-            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/">${term}</textarea>
-            <label class="fakeLabel" for="term/num/">Term</label> 
-        </div>
+            <div class="terms">
+                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/">${term}</textarea>
+                <label class="fakeLabel" for="term/num/">Term</label> 
+            </div>
 
 
-        <div class="definitions">
-            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">${definition}</textarea>
-            <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-        </div> 
+            <div class="definitions">
+                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">${definition}</textarea>
+                <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
+            </div> 
         </div>
         `
     }

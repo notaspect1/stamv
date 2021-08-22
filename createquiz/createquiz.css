@@ -1,47 +1,53 @@
-
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.ttf');
     font-style: normal;
     font-weight: 300;
 }
-html, body{
+
+html, body {
     font-family: Roboto;
     font-weight: 300;
-    margin:0;
+    margin: 0;
     height: 100%;
 }
+
 h1, h3 {
     color: #4B4949;
     text-align: center;
+    display: inline;
 }
+
 h2 {
     color: #4B4949;
 }
+
 p {
     color: #000000;
-    line-height: 1.8 ;
+    line-height: 1.8;
 }
 
-
-.header {
-    background: url('../images/createquiz.png') no-repeat scroll center top transparent;
+/* .header {
+    background-color: #21345f;
     background-size: cover;
     height: 60px;
     background-position: left;
-}​
+}​ */
 
 /* menu bar */
+
 .menu {
     overflow: hidden;
-}     
-.menu a{
+    background-color: #21345f;
+}
+
+.menu a {
     float: right;
     color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;    
+    font-size: 20px;
 }
 
 #footerWrapper {
@@ -50,7 +56,7 @@ p {
 }
 
 footer {
-    height:  75px;
+    height: 75px;
     text-align: center;
     padding: 3px;
     background-color: #E5E5E5;
@@ -58,7 +64,6 @@ footer {
 }
 
 #interactiveArea {
-
     width: 60%;
     margin: auto;
     align-content: center;
@@ -105,9 +110,10 @@ footer {
     border: none;
     box-shadow: none;
 }
+
 label {
     font-size: 10px;
-    display: block; 
+    display: block;
     /* background-color: white; */
     z-index: 10 !important;
 }
@@ -117,31 +123,42 @@ label {
     margin-top: -15px;
     float: right;
 }
-#visibility > * {
+
+#visibility>* {
     display: inline-block;
 }
 
-#visibility > input {
+#visibility>input {
     width: 60px;
-
 }
+
 #quizHere {
-    color:black;
+    color: black;
     background-color: none;
 }
-#quizHere > input {
-    background-color: #00000033;
-    color:white;
+
+#quizHere>input {
+    background-color: #f2f4f8;
+    color:#424448 ;
 }
 
 select {
-    background-color: #00000033;
-
+    background-color: #f2f4f8;
+    color:#424448;
 }
 
-#quizHere > textarea {
-    background-color: #00000033;
-    color:white;
+::placeholder {
+    color: #424448cc;
+}
+
+
+option {
+    color:#424448;
+}
+
+#quizHere>textarea {
+    background-color: #f2f4f8;
+    color:#424448;
 }
 
 textarea, input, select, option {
@@ -163,7 +180,7 @@ textarea {
 }
 
 h3 {
-    color: white;
+    color: #424448;
     display: inline;
 }
 
@@ -172,56 +189,56 @@ h3 {
     width: 100%;
     height: 15px;
     background-color: #00000000;
-    border-bottom: 2px white solid;
+    border-bottom: 2px #424448 solid;
     border-radius: 0px;
-    color: white;
+    color:#424448;
 }
 
 .definitions {
-    margin-left: 20px;
+    margin-left: 10%;
     width: 40%;
     display: inline-block;
 }
 
 .terms {
+    width: 20%;
+    margin-left: 5%;
     display: inline-block;
-    
 }
 
 .fakeLabel {
-    color: white;
+    color: #424448;
+    text-align: center;
 }
 
 .questions {
     border: none;
-    border-radius: 10px; 
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-   /* box-shadow: 0px 0px 50px #00000022;  */
-
-    background-color: #00000033;
-    border-left: #00000033 2px solid;
-
+    border-radius: 10px;
+    /* border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; */
+    /* box-shadow: 0px 0px 50px #00000022;  */
+    background-color: #f2f4f8;
+    /* border-left: #f2f4f8 2px solid; */
     padding: 20px;
     margin-bottom: 10px;
 }
 
 .deleteQuestion {
-    /* float: right; */
     display: inline;
-
-    margin-right: 20px;
-    display: block;
+    float: right;
+    /* margin-right: 20px; */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
     font-weight: 100;
     color: black;
-    background-color:white;
+    background-color: white;
     border-radius: 10px;
     padding: 10px;
-    border: 2px solid #00000033;
+    border: 1px solid #555555;
 }
 
-#quizDesctription {
+#quizDescription {}
 
+#top-area {
+    margin-bottom: 150px;
 }
