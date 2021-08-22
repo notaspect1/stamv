@@ -24,16 +24,17 @@ p {
 }
 
 
-.header {
-    background: url('../images/createquiz.png') no-repeat scroll center top transparent;
+/* .header {
+    background-color: #21345f;
     background-size: cover;
     height: 60px;
     background-position: left;
-}​
+}​ */
 
 /* menu bar */
 .menu {
     overflow: hidden;
+    background-color: #21345f;
 }     
 .menu a{
     float: right;
