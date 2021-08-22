@@ -26,7 +26,7 @@ document.getElementById("visiblityDropdown").value = Visibility
 let addQuestionTemplate = `      
 <div id="question${amount}" class="questions">
     <div class="top-area">
-        <h3>${amount}</h3>
+        <h3>${amount}.</h3>
         <button class="deleteButton">Delete</button>
     <div>
 
@@ -58,7 +58,7 @@ document.getElementById("addQuestion").onclick = function () {
     addQuestionTemplate = `      
     <div id="question/num/" class="questions">
         <div class="top-area">
-            <h3>/num/</h3>
+            <h3>/num/.</h3>
             <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
         </div>
 
@@ -96,7 +96,7 @@ function refillList() {
         questionsList[i] = `
         <div id="question/num/" class="questions">
             <div class="top-area">
-                <h3>/num/</h3>
+                <h3>/num/.</h3>
                 <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
             </div>
 
