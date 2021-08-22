@@ -25,8 +25,10 @@ document.getElementById("visiblityDropdown").value = Visibility
 
 let addQuestionTemplate = `      
 <div id="question${amount}" class="questions">
-    <h3>${amount}</h3>
-    <button class="deleteButton">Delete</button>
+    <div class="top-area">
+        <h3>${amount}</h3>
+        <button class="deleteButton">Delete</button>
+    <div>
 
     <div class="terms">
         <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term${amount}" id="term${amount}"></textarea>
@@ -55,8 +57,10 @@ document.getElementById("addQuestion").onclick = function () {
     amount++
     addQuestionTemplate = `      
     <div id="question/num/" class="questions">
-        <h3>/num/</h3>
-        <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+        <div class="top-area">
+            <h3>/num/</h3>
+            <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+        </div>
 
         <div class="terms">
             <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/"></textarea>
@@ -91,19 +95,21 @@ function refillList() {
         console.log(definition)
         questionsList[i] = `
         <div id="question/num/" class="questions">
-        <h3>/num/</h3>
-        <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+            <div class="top-area">
+                <h3>/num/</h3>
+                <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+            </div>
 
-        <div class="terms">
-            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/">${term}</textarea>
-            <label class="fakeLabel" for="term/num/">Term</label> 
-        </div>
+            <div class="terms">
+                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/">${term}</textarea>
+                <label class="fakeLabel" for="term/num/">Term</label> 
+            </div>
 
 
-        <div class="definitions">
-            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">${definition}</textarea>
-            <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-        </div> 
+            <div class="definitions">
+                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">${definition}</textarea>
+                <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
+            </div> 
         </div>
         `
     }
