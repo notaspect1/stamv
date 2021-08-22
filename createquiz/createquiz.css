@@ -147,6 +147,11 @@ select {
     color:white;
 }
 
+::placeholder {
+    color: #ffffffcc;
+}
+
+
 option {
     color:white;
 }

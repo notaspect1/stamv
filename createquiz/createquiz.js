@@ -1,8 +1,8 @@
 //there should be a function to fill in previous questions witht he same id im thinking base 64 8 digit thing
 
 
-let QuizName = "Default"
-let Description = "Lorem ipsum dolor sit am tempor inciliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui"
+let QuizName = ""
+let Description = ""
 let Visibility = "Public" 
 let amount = 0
 /* 
