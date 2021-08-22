@@ -1,29 +1,31 @@
-
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.ttf');
     font-style: normal;
     font-weight: 300;
 }
-html, body{
+
+html, body {
     font-family: Roboto;
     font-weight: 300;
-    margin:0;
+    margin: 0;
     height: 100%;
 }
+
 h1, h3 {
     color: #4B4949;
     text-align: center;
     display: inline;
 }
+
 h2 {
     color: #4B4949;
 }
+
 p {
     color: #000000;
-    line-height: 1.8 ;
+    line-height: 1.8;
 }
-
 
 /* .header {
     background-color: #21345f;
@@ -33,17 +35,19 @@ p {
 }​ */
 
 /* menu bar */
+
 .menu {
     overflow: hidden;
     background-color: #21345f;
-}     
-.menu a{
+}
+
+.menu a {
     float: right;
     color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;    
+    font-size: 20px;
 }
 
 #footerWrapper {
@@ -52,7 +56,7 @@ p {
 }
 
 footer {
-    height:  75px;
+    height: 75px;
     text-align: center;
     padding: 3px;
     background-color: #E5E5E5;
@@ -60,7 +64,6 @@ footer {
 }
 
 #interactiveArea {
-
     width: 60%;
     margin: auto;
     align-content: center;
@@ -107,9 +110,10 @@ footer {
     border: none;
     box-shadow: none;
 }
+
 label {
     font-size: 10px;
-    display: block; 
+    display: block;
     /* background-color: white; */
     z-index: 10 !important;
 }
@@ -119,31 +123,37 @@ label {
     margin-top: -15px;
     float: right;
 }
-#visibility > * {
+
+#visibility>* {
     display: inline-block;
 }
 
-#visibility > input {
+#visibility>input {
     width: 60px;
-
 }
+
 #quizHere {
-    color:black;
+    color: black;
     background-color: none;
 }
-#quizHere > input {
+
+#quizHere>input {
     background-color: #00000055;
-    color:white;
+    color: white;
 }
 
 select {
     background-color: #00000055;
-
+    color:white;
 }
 
-#quizHere > textarea {
-    background-color: #00000055;
+option {
     color:white;
+}
+
+#quizHere>textarea {
+    background-color: #00000055;
+    color: white;
 }
 
 textarea, input, select, option {
@@ -167,7 +177,6 @@ textarea {
 h3 {
     color: white;
     display: inline;
-
 }
 
 .term {
@@ -181,14 +190,15 @@ h3 {
 }
 
 .definitions {
-    margin-left: 60px;
+    margin-left: 10%;
     width: 40%;
     display: inline-block;
 }
 
 .terms {
+    width: 20%;
+    margin-left: 5%;
     display: inline-block;
-    
 }
 
 .fakeLabel {
@@ -198,14 +208,12 @@ h3 {
 
 .questions {
     border: none;
-    border-radius: 10px; 
+    border-radius: 10px;
     /* border-top-left-radius: 0px;
     border-bottom-left-radius: 0px; */
-   /* box-shadow: 0px 0px 50px #00000022;  */
-
+    /* box-shadow: 0px 0px 50px #00000022;  */
     background-color: #00000055;
     /* border-left: #00000055 2px solid; */
-
     padding: 20px;
     margin-bottom: 10px;
 }
@@ -218,15 +226,13 @@ h3 {
     font-size: 15px;
     font-weight: 100;
     color: black;
-    background-color:white;
+    background-color: white;
     border-radius: 10px;
     padding: 10px;
     border: 2px solid #00000055;
 }
 
-#quizDescription {
-
-}
+#quizDescription {}
 
 #top-area {
     margin-bottom: 150px;
