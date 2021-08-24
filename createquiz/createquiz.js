@@ -24,25 +24,25 @@ document.getElementById("visiblityDropdown").value = Visibility
 
 
 let addQuestionTemplate = `      
-<div id="question${amount}" class="questions">
+<div id="question/num/" class="questions">
     <div class="top-area">
-        <h3>${amount}.</h3>
-        <button class="deleteButton"></button>
-    <div>
+        <h3>/num/.</h3>
+        <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
+    </div>
 
     <div class="terms">
-        <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term${amount}" id="term${amount}"></textarea>
-        <label class="fakeLabel" for="term${amount}">Term</label> 
+        <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term//num/" id="term/num/">/term/</textarea>
+        <label class="fakeLabel" for="term/num/">Term</label> 
     </div>
 
     <div class="definitions">
-        <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition${amount}" id="definition${amount}"></textarea>
-        <label class="fakeLabel" for="definition${amount}">Definition</label> 
+        <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">/def/</textarea>
+        <label class="fakeLabel" for="definition/num/">Definition</label> 
     </div> 
 </div>
 `;
 
-let questionsList = []
+let questionsListProper = []
 
 /* 
 
@@ -52,16 +52,7 @@ Fill in already written questions from fetched data here using a for loop it sho
 
 //export data (unfinished)
 document.getElementById("saveQuestions").onclick = function () {
-    console.log("test")    
-    arr = []
-    for (let i = 0; i < questionsList.length; i++) {
-        var temp = {
-            "term": document.getElementById("term" + i).value, 
-            "definition": document.getElementById("definition" + i).value
-        }
-        arr.push(temp)
-    }
-    console.log(arr)
+    console.log(questionsListProper)
 }
 
 
@@ -69,26 +60,10 @@ document.getElementById("saveQuestions").onclick = function () {
 document.getElementById("addQuestion").onclick = function () {
     refillList()
     amount++
-    addQuestionTemplate = `      
-    <div id="question/num/" class="questions">
-        <div class="top-area">
-            <h3>/num/.</h3>
-            <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
-        </div>
-
-        <div class="terms">
-            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/"></textarea>
-            <label class="fakeLabel" for="term/num/">Term</label> 
-        </div>
-
-        <div class="definitions">
-            <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/"></textarea>
-            <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-        </div> 
-    </div>
-    `;
-
-    questionsList.push(addQuestionTemplate);
+    questionsListProper.push({"term":"", "definition":""})
+     
+    //questionsList.push(addQuestionTemplate);
+    console.log(questionsListProper)
     render()
 }
 
@@ -96,43 +71,28 @@ document.getElementById("addQuestion").onclick = function () {
 function removeQuestion(pos) {
     refillList()
     //console.log("removing question")
-    questionsList.splice(pos, 1)
+    questionsListProper.splice(pos, 1)
     render()
 }
 
 function refillList() {
     let term = ""
     let definition = ""
-    for (let i = 0; i < questionsList.length; i++) {
+    let templist = []
+    for (let i = 0; i < questionsListProper.length; i++) {
         term = document.getElementById(`term${i}`).value.trim()
         definition = document.getElementById(`definition${i}`).value.trim()
         console.log(definition)
-        questionsList[i] = `
-        <div id="question/num/" class="questions">
-            <div class="top-area">
-                <h3>/num/.</h3>
-                <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
-            </div>
-
-            <div class="terms">
-                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="term/num/" id="term/num/">${term}</textarea>
-                <label class="fakeLabel" for="term/num/">Term</label> 
-            </div>
-
-
-            <div class="definitions">
-                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/" id="definition/num/">${definition}</textarea>
-                <label class="fakeLabel" for="definition/num/">Definition (optional)</label> 
-            </div> 
-        </div>
-        `
+        templist.push({"term": term, "definition": definition})
     }
+    questionsListProper = templist
 }
 
 function render() {
     let buffer = ""
-    for (let i = 0; i < questionsList.length; i++) {
-        buffer += (questionsList[i].replaceAll("/num/", i)) //I know replaceAll is relatively recent maybe we should use a more outdated method
+    for (let i = 0; i < questionsListProper.length; i++) {
+        //I know replaceAll is relatively recent maybe we should use a more outdated method
+        buffer += addQuestionTemplate.replaceAll("/num/", i).replaceAll("/term/", questionsListProper[i].term).replaceAll("/def/", questionsListProper[i].definition) 
         //console.log(buffer)
     }
     document.getElementById("listOfQuestions").innerHTML = buffer;
