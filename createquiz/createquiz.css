@@ -50,11 +50,6 @@ p {
     font-size: 20px;
 }
 
-#footerWrapper {
-    min-height: 100%;
-    margin: 0 auto -75px;
-}
-
 footer {
     height: 75px;
     text-align: center;
