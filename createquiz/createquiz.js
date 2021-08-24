@@ -50,6 +50,20 @@ Fill in already written questions from fetched data here using a for loop it sho
 
 */
 
+//export data (unfinished)
+document.getElementById("saveQuestions").onclick = function () {
+    console.log("test")    
+    arr = []
+    for (let i = 0; i < questionsList.length; i++) {
+        var temp = {
+            "term": document.getElementById("term" + i).value, 
+            "definition": document.getElementById("definition" + i).value
+        }
+        arr.push(temp)
+    }
+    console.log(arr)
+}
+
 
 //add Question
 document.getElementById("addQuestion").onclick = function () {
