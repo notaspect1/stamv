@@ -226,10 +226,20 @@ h3 {
     font-size: 15px;
     font-weight: 100;
     color: black;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 10px;
-    padding: 10px;
-    border: 1px solid #555555;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    margin-top: -10px;
+    border: none;
+    background-color: white;
+    background: url('../images/trash.png') no-repeat scroll center top transparent;
+    background-size: 30px 30px;
+}
+
+.deleteQuestion:hover {
+    cursor: pointer;
 }
 
 #quizDescription {}

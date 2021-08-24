@@ -27,7 +27,7 @@ let addQuestionTemplate = `
 <div id="question${amount}" class="questions">
     <div class="top-area">
         <h3>${amount}.</h3>
-        <button class="deleteButton">Delete</button>
+        <button class="deleteButton"></button>
     <div>
 
     <div class="terms">
@@ -59,7 +59,7 @@ document.getElementById("addQuestion").onclick = function () {
     <div id="question/num/" class="questions">
         <div class="top-area">
             <h3>/num/.</h3>
-            <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+            <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
         </div>
 
         <div class="terms">
@@ -97,7 +97,7 @@ function refillList() {
         <div id="question/num/" class="questions">
             <div class="top-area">
                 <h3>/num/.</h3>
-                <button class="deleteQuestion" onclick="removeQuestion(/num/)">Delete</button>
+                <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
             </div>
 
             <div class="terms">
