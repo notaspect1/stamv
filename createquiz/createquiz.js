@@ -82,6 +82,8 @@ function refillList() {
     for (let i = 0; i < questionsListProper.length; i++) {
         term = document.getElementById(`term${i}`).value.trim()
         definition = document.getElementById(`definition${i}`).value.trim()
+        term = term.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        definition = definition.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         console.log(definition)
         templist.push({"term": term, "definition": definition})
     }
