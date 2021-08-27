@@ -314,3 +314,7 @@ h3 {
     border-color: #b7b7b766;
     background-color: #b7b7b766;
 }
+
+#preventSizeChange {
+    height: 100px;
+}
