@@ -122,6 +122,7 @@ function render() {
             <h3>/num/.</h3>
             <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
         </div>
+        <hr class="topSeperator" />
         <div class="termDefContainer">
             <div class="terms">
                 <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term//num/" id="term/num/">/term/</textarea>

@@ -308,3 +308,8 @@ h3 {
 .definitionLabel {
     float: left;
 }
+
+.topSeperator {
+    border-color: #b7b7b766;
+    background-color: #b7b7b766;
+}
