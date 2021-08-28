@@ -1,0 +1,21 @@
+{
+    "questions": [
+        {
+            "term": "",
+            "definitions": [
+                ""
+            ]
+        },
+        {
+            "term": "",
+            "definitions": [
+                ""
+            ]
+        }
+    ],
+    "id": 1234,
+    "permissions": {
+        "canView": [],
+        "canEdit": []
+    }
+}
