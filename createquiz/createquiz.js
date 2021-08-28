@@ -1,10 +1,14 @@
 //There should be a function to fill in previous questions witht he same id im thinking base 64 8 digit thing
 
-
+let quizId = 1234 //This is temporary
 let QuizName = ""
 let Description = ""
 let Visibility = "Public" 
 let amount = 0
+var permissions = {
+    "canView":[],
+    "canEdit":[]
+}
 
 /* 
 
@@ -54,7 +58,12 @@ document.getElementById("addQuestion").onclick = addQuestion;
 
 //Export Data
 function exportData() {
-    console.log(questionsListProper)
+    var data = {
+        "questions":questionsListProper,
+        "id": quizId,
+        "permissions":permissions
+    }
+    console.log(JSON.stringify(data))
 }
 
 //Add Question
