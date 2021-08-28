@@ -60,10 +60,29 @@ document.getElementById("saveQuestions").onclick = function () {
 document.getElementById("addQuestion").onclick = function () {
     refillList()
     amount++
-    questionsListProper.push({"term":"", "definition":""})
+    questionsListProper.push({"term":"", "definitions":[""]})
      
     //questionsList.push(addQuestionTemplate);
     console.log(questionsListProper)
+    render()
+}
+//remove Definition
+function removeDefinition(question, definition) {
+    if (questionsListProper[question].definitions.length >= 2) {
+        refillList()
+        questionsListProper[question].definitions.splice(definition, 1)
+        render()
+    }
+    else {
+        console.log("Cannot remove only definition")
+    }
+}
+
+//add definition
+function addDefinition(question) {
+    refillList()
+    console.log("Adding definition to question " + question)
+    questionsListProper[question].definitions.push('')
     render()
 }
 
@@ -77,24 +96,58 @@ function removeQuestion(pos) {
 
 function refillList() {
     let term = ""
-    let definition = ""
+    let definitions = []
     let templist = []
     for (let i = 0; i < questionsListProper.length; i++) {
+        definitions = []
         term = document.getElementById(`term${i}`).value.trim()
-        definition = document.getElementById(`definition${i}`).value.trim()
+        for (let j = 0; j < questionsListProper[i].definitions.length; j++) {
+            let temp = document.getElementById(`definition${i}_${j}`).value.trim()
+            temp = temp.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            definitions.push(temp)
+        }
         term = term.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        definition = definition.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        console.log(definition)
-        templist.push({"term": term, "definition": definition})
+        console.log("definitions")
+        console.log(definitions)
+        templist.push({"term": term, "definitions": definitions})
     }
     questionsListProper = templist
 }
 
 function render() {
     let buffer = ""
+    let begginning =  `
+    <div id="question/num/" class="questions">
+        <div class="top-area">
+            <h3>/num/.</h3>
+            <button class="deleteQuestion" onclick="removeQuestion(/num/)"></button>
+        </div>
+        <hr class="topSeperator" />
+        <div class="termDefContainer">
+            <div class="terms">
+                <textarea onkeypress="textAreaUpdater(this)" type="text"  class="term" name="term//num/" id="term/num/">/term/</textarea>
+                <label class="fakeLabel" for="term/num/">Term</label> 
+            </div>
+            <div class="definitions">`
+    definition_template = `
+                <textarea onkeypress="textAreaUpdater(this)" type="text" class="term" name="definition/num/_/num2/" id="definition/num/_/num2/">/def/</textarea>
+                <div class="removeAndLabel">
+                    <label class="definitionLabel fakeLabel inline" for="definition/num/_/num2/">Definition</label> 
+                    <label class="removeDefinition fakeLabel" onclick="removeDefinition(/num/, /num2/)">Remove</label>
+                </div>
+                `
+    end = `
+                <button class="addDefinition smallbtn" onclick="addDefinition(/num/)">+</button>
+            </div> 
+        </div>
+    </div>`
     for (let i = 0; i < questionsListProper.length; i++) {
-        //I know replaceAll is relatively recent maybe we should use a more outdated method
-        buffer += addQuestionTemplate.replaceAll("/num/", i).replaceAll("/term/", questionsListProper[i].term).replaceAll("/def/", questionsListProper[i].definition) 
+        buffer += begginning.replaceAll("/num/", i).replaceAll("/term/", questionsListProper[i].term) 
+        for (let j = 0; j < questionsListProper[i].definitions.length; j++) {
+            buffer += definition_template.replaceAll("/num/", i).replaceAll("/num2/", j).replaceAll("/def/", questionsListProper[i].definitions[j]) 
+        }
+        buffer += end.replaceAll("/num/", i)
+        // buffer += addQuestionTemplate.replaceAll("/num/", i).replaceAll("/term/", questionsListProper[i].term).replaceAll("/def/", questionsListProper[i].definition) 
         //console.log(buffer)
     }
     document.getElementById("listOfQuestions").innerHTML = buffer;
