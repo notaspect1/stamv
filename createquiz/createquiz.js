@@ -1,10 +1,15 @@
-//there should be a function to fill in previous questions witht he same id im thinking base 64 8 digit thing
+//There should be a function to fill in previous questions witht he same id im thinking base 64 8 digit thing
 
-
+let quizId = 1234 //This is temporary
 let QuizName = ""
 let Description = ""
 let Visibility = "Public" 
 let amount = 0
+var permissions = {
+    "canView":[],
+    "canEdit":[]
+}
+
 /* 
 
 
@@ -13,10 +18,6 @@ Fetch Data Here
 
 
 */
-
-
-
-
 
 document.getElementById("quizName").value = QuizName
 document.getElementById("quizDescription").value = Description
@@ -50,23 +51,31 @@ Fill in already written questions from fetched data here using a for loop it sho
 
 */
 
-//export data (unfinished)
-document.getElementById("saveQuestions").onclick = function () {
-    console.log(questionsListProper)
+document.getElementById("saveQuestions").onclick = exportData
+document.getElementById("addQuestion").onclick = addQuestion;
+
+
+
+//Export Data
+function exportData() {
+    var data = {
+        "questions":questionsListProper,
+        "id": quizId,
+        "permissions":permissions
+    }
+    console.log(JSON.stringify(data))
 }
 
-
-//add Question
-document.getElementById("addQuestion").onclick = function () {
+//Add Question
+function addQuestion() {
     refillList()
     amount++
     questionsListProper.push({"term":"", "definitions":[""]})
      
-    //questionsList.push(addQuestionTemplate);
-    console.log(questionsListProper)
     render()
 }
-//remove Definition
+
+//Remove Definition
 function removeDefinition(question, definition) {
     if (questionsListProper[question].definitions.length >= 2) {
         refillList()
@@ -78,18 +87,17 @@ function removeDefinition(question, definition) {
     }
 }
 
-//add definition
+//Add definition
 function addDefinition(question) {
     refillList()
-    console.log("Adding definition to question " + question)
     questionsListProper[question].definitions.push('')
     render()
 }
 
-//remove question
+//Remove question
 function removeQuestion(pos) {
     refillList()
-    //console.log("removing question")
+
     questionsListProper.splice(pos, 1)
     render()
 }
@@ -107,8 +115,7 @@ function refillList() {
             definitions.push(temp)
         }
         term = term.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        console.log("definitions")
-        console.log(definitions)
+
         templist.push({"term": term, "definitions": definitions})
     }
     questionsListProper = templist
@@ -141,15 +148,17 @@ function render() {
             </div> 
         </div>
     </div>`
+    //Generate buffer
     for (let i = 0; i < questionsListProper.length; i++) {
+        //This adds the term and numbers 
         buffer += begginning.replaceAll("/num/", i).replaceAll("/term/", questionsListProper[i].term) 
+        //This adds the definitions
         for (let j = 0; j < questionsListProper[i].definitions.length; j++) {
             buffer += definition_template.replaceAll("/num/", i).replaceAll("/num2/", j).replaceAll("/def/", questionsListProper[i].definitions[j]) 
         }
+        //This adds the ending html
         buffer += end.replaceAll("/num/", i)
-        // buffer += addQuestionTemplate.replaceAll("/num/", i).replaceAll("/term/", questionsListProper[i].term).replaceAll("/def/", questionsListProper[i].definition) 
-        //console.log(buffer)
     }
+    //Insert the bffer into the html
     document.getElementById("listOfQuestions").innerHTML = buffer;
-    // console.log(questionsList)
 }
