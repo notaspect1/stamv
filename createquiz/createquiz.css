@@ -233,10 +233,10 @@ h3 {
     font-weight: 100;
     color: black;
     /* background-color: white; */
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    padding: 0px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
     margin-top: -10px;
     border: none;
     background-color: white;
@@ -246,6 +246,7 @@ h3 {
 
 .deleteQuestion:hover {
     cursor: pointer;
+    background-color: #00000033;
 }
 
 #quizDescription {}
@@ -282,6 +283,7 @@ h3 {
 .smallbtn:hover {
     background-color: #00000033;
 }
+
 
 .smallbtn:active {
     background-color: #00000066;
