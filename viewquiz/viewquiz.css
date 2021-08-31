@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 300;
 }
-
+/* global stuff */
 html, body {
     font-family: Roboto;
     font-weight: 300;
@@ -26,16 +26,8 @@ p {
     color: #000000;
     line-height: 1.8;
 }
-
-/* .header {
-    background-color: #21345f;
-    background-size: cover;
-    height: 60px;
-    background-position: left;
-}​ */
-
-/* menu bar */
-
+/* classes */
+/* in order of first use  */
 .menu {
     overflow: hidden;
     background-color: #21345f;
@@ -50,14 +42,31 @@ p {
     font-size: 20px;
 }
 
-footer {
-    height: 75px;
-    text-align: center;
-    padding: 3px;
-    margin-top: 100px;
-    background-color: #E5E5E5;
-    color: #FFFFFF;
+.disabled {
+    cursor: not-allowed;
+    background-color: #dddddd !important;
 }
+
+.movementBtns {
+    height: 50px;
+    margin: auto;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    background-color: #bbbbbb;
+}
+
+.movementBtns:hover {
+    background-color: #999999;
+}
+
+.movementBtns:active {
+    background-color: #777777;
+}
+
+/* ids */
+/* in order of use  */
 
 #interactiveArea {
     width: 60%;
@@ -65,12 +74,28 @@ footer {
     align-content: center;
 }
 
+#centralArea {
+    display: flex;
+    flex-direction: row;
+    margin-top: 125px;
+}
+
+
 #card {
     margin: auto;
-    margin-top: 125px;
     width: 80%;
     border-radius: 10px;
     text-align: center;
     height: 25vh;
     box-shadow: 0px 0px 10px #00000066;
+}
+
+
+footer {
+    height: 75px;
+    text-align: center;
+    padding: 3px;
+    margin-top: 100px;
+    background-color: #E5E5E5;
+    color: #FFFFFF;
 }
