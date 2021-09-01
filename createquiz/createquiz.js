@@ -59,6 +59,9 @@ document.getElementById("addQuestion").onclick = addQuestion;
 //Export Data
 function exportData() {
     var data = {
+        "title": QuizName,
+        "description":Description,
+        "visiblity":Visibility,
         "questions":questionsListProper,
         "id": quizId,
         "permissions":permissions
