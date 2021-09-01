@@ -10,6 +10,8 @@ fetch(url, {method: 'GET',})
 
 function doStuff(data) {
   questions = data.questions
+  document.getElementById("title").innerText = data.title
+  document.getElementById("description").innerText = data.description
   console.log(data)
   cardUpdate()
 }

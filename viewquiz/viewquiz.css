@@ -68,6 +68,12 @@ p {
 /* ids */
 /* in order of use  */
 
+#info {
+    width: 48%;
+    margin: auto;
+    margin-top: 50px;
+}
+
 #interactiveArea {
     width: 60%;
     margin: auto;
@@ -77,7 +83,7 @@ p {
 #centralArea {
     display: flex;
     flex-direction: row;
-    margin-top: 125px;
+    margin-top: 75px;
 }
 
 
