@@ -13,6 +13,12 @@
             "definitions": [
                 "this is a definition"
             ]
+        },
+        {
+            "term": "test",
+            "definitions": [
+                "this is a definition"
+            ]
         }
     ],
     "id": 1234,
