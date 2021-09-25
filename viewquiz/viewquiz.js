@@ -1,8 +1,9 @@
 
 let questions = []
-let currentPosition = 0;
+let currentPosition = 0
 let url = "./test.json"
-
+let numAnswers = 3
+let selectedAnswer = null
 
 fetch(url, {method: 'GET',})
   .then(Response => Response.json())
@@ -16,6 +17,11 @@ function doStuff(data) {
 }
 
 function makeSelected(id) {
-  id.classList.add("selected")
+  selectedAnswer = id
+  if (id.classList.contains("selected")) {
+    id.classList.remove("selected")
+  } else {
+    id.classList.add("selected")
+  }
   console.log(id)
 }
