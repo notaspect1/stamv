@@ -13,34 +13,9 @@ function doStuff(data) {
   document.getElementById("title").innerText = data.title
   document.getElementById("description").innerText = data.description
   console.log(data)
-  cardUpdate()
 }
 
-function cardUpdate() {
-  currentPosition = Math.max(Math.min(questions.length - 1, currentPosition), 0)
-  document.getElementById("displayTerm").innerText = questions[currentPosition].term
-  document.getElementById("displayDefinition").innerText = questions[currentPosition].definitions[0]
-}
-
-
-document.getElementById("leftArrow").classList.add("disabled")
-
-
-//button onclicks
-document.getElementById("rightArrow").onclick = function() {
-  currentPosition++;
-  if (currentPosition == questions.length - 1) {
-    document.getElementById("rightArrow").classList.add("disabled")
-  }
-  document.getElementById("leftArrow").classList.remove("disabled")
-  cardUpdate()
-}
-
-document.getElementById("leftArrow").onclick = function() {
-  currentPosition--;
-  if (currentPosition == 0) {
-    document.getElementById("leftArrow").classList.add("disabled")
-  }
-  document.getElementById("rightArrow").classList.remove("disabled")
-  cardUpdate()
+function makeSelected(id) {
+  id.classList.add("selected")
+  console.log(id)
 }
