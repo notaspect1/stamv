@@ -43,13 +43,13 @@ function generate(correctQuestion) {
 
 function makeSelected(id) {
   if (selectedAnswer != null) {
-    selectedAnswer.classList.remove("selected")
+    selectedAnswer.classList.remove("correct")
   }
   selectedAnswer = id
-  if (id.classList.contains("selected")) {
-    id.classList.remove("selected")
+  if (id.classList.contains("correct")) {
+    id.classList.remove("correct")
   } else {
-    id.classList.add("selected")
+    id.classList.add("correct")
   }
   console.log(id)
 }
