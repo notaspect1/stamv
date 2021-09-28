@@ -1,4 +1,3 @@
-
 let questions = []
 let currentPosition = 0
 let url = "./test.json"
@@ -14,7 +13,7 @@ function doStuff(data) {
   document.getElementById("title").innerText = data.title
   document.getElementById("description").innerText = data.description
   console.log(questions)
-  generate(questions[0])
+  generate(questions[parseInt(Math.random() * questions.length)])
 }
 
 function generate(correctQuestion) {
@@ -22,14 +21,16 @@ function generate(correctQuestion) {
   arr.push(correctQuestion.definitions[0])
   for (let i = 0; i < numAnswers - 1; i++) {
     x = parseInt(Math.random() * questions.length)
-    arr.push(questions[x].definitions[0])
+    if (questions[x].definitions[0] != correctQuestion.definitions[0]) {
+      arr.push(questions[x].definitions[0])
+    }
   }
 
   buffer = ""
   for (let i = 0; i < arr.length; i++) {
     buffer += `
     <div class="answers" onclick="makeSelected(this)">
-      <p>
+      <p class="unselectable">
       REPLACE
       </p>
     </div>
