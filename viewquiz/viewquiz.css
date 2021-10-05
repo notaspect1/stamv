@@ -4,17 +4,17 @@
   font-style: normal;
   font-weight: 300;
 }
+
 /* global stuff */
-html,
-body {
+
+html, body {
   font-family: Roboto;
   font-weight: 300;
   margin: 0;
   height: 100%;
 }
 
-h1,
-h3 {
+h1, h3 {
   color: #4b4949;
   text-align: center;
   display: inline;
@@ -29,8 +29,11 @@ p {
   color: #000000;
   line-height: 1.8;
 }
+
 /* classes */
+
 /* in order of first use  */
+
 .menu {
   overflow: hidden;
   background-color: #21345f;
@@ -69,6 +72,7 @@ p {
 }
 
 /* ids */
+
 /* in order of use  */
 
 #info {
@@ -137,6 +141,7 @@ p {
 }
 
 .answers {
+  min-width: 200px;
   padding: 2px;
   text-align: center;
   border-radius: 10px;
@@ -145,19 +150,19 @@ p {
 }
 
 #verticalSplit {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-.scaledImage  {
-    width: 70%;
-    margin-left: 10%;
-    height: fit-content;
+.scaledImage {
+  width: 70%;
+  margin-left: 10%;
+  /* height: fit-content; */
 }
 
 .selected {
-    box-shadow: 0px 0px 3px #009e28;
-    background-color: #009e2811;
+  box-shadow: 0px 0px 3px #009e28;
+  background-color: #009e2811;
 }
 
 footer {
