@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 300;
+}
+body{
+    font-family: Roboto;
+    font-weight: 300;
+    margin:0;
+}
+h3 {
+    color: #4B4949;
+}
+h2 {
+    color: #4B4949;
+}
+p {
+    color: #000000;
+    line-height: 1.8 ;
+}
+
+hr {
+    height: 3px;
+    color:#fac56f;
+    border: none;
+    background-color:#fac56f; 
+    width:180px;
+
+    float: left;
+}
+
+/* menu bar */
+.menu {
+    overflow: hidden;
+    background-color: #21345f;
+}     
+.menu a{
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;    
+    padding-top: 17px;
+
+}
+
+h1{
+    color:#0d0d0d;
+    text-align: left;
+}
+
+#RecentlyStudiedContainer {
+    margin-left: 20px;
+    margin-bottom: 200px;
+}
+
+#AllQuizesContainer {
+    margin-left: 20px;
+    margin-bottom: 200px;
+
+}
+
+.seperator {
+    float: none;
+    height: 1px;
+    border-width:0;
+    color:#0d0d0d;
+    background-color:#0d0d0d;
+}
+
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: #E5E5E5;
+    color: #FFFFFF;
+}
