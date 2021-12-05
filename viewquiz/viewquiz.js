@@ -1,31 +1,54 @@
 let questions = []
 let currentPosition = 0
 let url = "./test.json"
-let numAnswers = 3
+let numAnswers = 4
 let selectedAnswer = null
+let shownAnswers = []
+let correctAnswer = null
 
 fetch(url, {method: 'GET',})
   .then(Response => Response.json())
   .then(data => doStuff(data))
+
+
+
 
 function doStuff(data) {
   questions = data.questions
   document.getElementById("title").innerText = data.title
   document.getElementById("description").innerText = data.description
   console.log(questions)
-  generate(questions[parseInt(Math.random() * questions.length)])
+  document.getElementById("progress").max = questions.length;
+  renderQuestion()
 }
 
-function generate(correctQuestion) {
-  arr = []
-  arr.push(correctQuestion.definitions[0])
-  for (let i = 0; i < numAnswers - 1; i++) {
-    x = parseInt(Math.random() * questions.length)
-    if (questions[x].definitions[0] != correctQuestion.definitions[0]) {
-      arr.push(questions[x].definitions[0])
-    }
+function renderQuestion() {
+  document.getElementById("progress").value = ++currentPosition;
+  correctAnswer = questions[currentPosition]
+  shownAnswers = generate(correctAnswer)
+  trueRender(shownAnswers)
+}
+
+function revealAnswers(arr) {
+  console.log("called")
+  buffer = ""
+  for (let i = 0; i < arr.length; i++) {
+    buffer += `
+    <div class="answers OTHERCLASS" onclick="makeSelected(this)">
+      <p class="unselectable">
+      REPLACE
+      </p>
+    </div>
+    `.replace("REPLACE", arr[i])
+    .replace("OTHERCLASS", (arr[i] == correctAnswer.definitions[0]) ? "correct" : "wrong")
   }
 
+  document.getElementById("answersContainer").innerHTML = buffer;
+
+
+}
+
+function trueRender(arr) {
   buffer = ""
   for (let i = 0; i < arr.length; i++) {
     buffer += `
@@ -37,19 +60,43 @@ function generate(correctQuestion) {
     `.replace("REPLACE", arr[i])
   }
 
-  document.getElementById("term").innerText = correctQuestion.term
+  buffer += `
+    <button onclick="revealAnswers(shownAnswers)" id="checkBtn">
+      Check
+    </button>
+  `
+
+  document.getElementById("term").innerText = correctAnswer.term
   document.getElementById("answersContainer").innerHTML = buffer;
+
 }
+
+function generate(cq) {
+  arr = []
+  arr.push(cq.definitions[0])
+  for (let i = 0; i < numAnswers - 1; i++) {
+    x = parseInt(Math.random() * questions.length)
+    if (questions[x].definitions[0] != cq.definitions[0]) {
+      arr.push(questions[x].definitions[0])
+    }
+    else {
+      i--;
+    }
+  }
+  return arr
+}
+
+
 
 function makeSelected(id) {
   if (selectedAnswer != null) {
-    selectedAnswer.classList.remove("correct")
+    selectedAnswer.classList.remove("selected")
   }
   selectedAnswer = id
-  if (id.classList.contains("correct")) {
-    id.classList.remove("correct")
+  if (id.classList.contains("selected")) {
+    id.classList.remove("selected")
   } else {
-    id.classList.add("correct")
+    id.classList.add("selected")
   }
   console.log(id)
 }

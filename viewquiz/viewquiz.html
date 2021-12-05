@@ -24,12 +24,13 @@
     </div>
     <div id="interactiveArea">
       <div id="centralArea">
-        <div>
+        <div id="termArea">
           <h1 id="term"></h1>
-          <button id="dontKnowBtn">DONT KNOW</button>
+          <button id="dontKnowBtn" onclick="revealAnswers(shownAnswers)">DONT KNOW</button>
+
+          <hr id="cardSplit" />
+          <p id="termLabel">TERM</p>
         </div>
-        <hr id="cardSplit" />
-        <p id="termLabel">TERM</p>
         <div id="verticalSplit">
           <div id="answersContainer"></div>
           <div id="imageContainer">
@@ -38,6 +39,11 @@
               alt="a"
             />
           </div>
+        </div>
+
+        <div id="progressAreaContainer">
+            <label>Progress:</label>
+            <progress id="progress" value="0" max="0"></progress>
         </div>
       </div>
     </div>
