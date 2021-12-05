@@ -7,6 +7,7 @@ body{
     font-family: Roboto;
     font-weight: 300;
     margin:0;
+    background-color: #fdfdfd;
 }
 h3 {
     color: #4B4949;
@@ -21,12 +22,13 @@ p {
 
 hr {
     height: 3px;
-    color:#fac56f;
+    color: #fac56f;
     border: none;
-    background-color:#fac56f; 
-    width:180px;
-
-    float: left;
+    background-color: #fac56f;
+    width: 180px;
+    /* float: left; */
+    margin-left: 0;
+    display: block;
 }
 
 /* menu bar */
@@ -70,9 +72,84 @@ h1{
 }
 
 
+
 footer {
     text-align: center;
     padding: 3px;
     background-color: #E5E5E5;
     color: #FFFFFF;
 }
+.scrollmenu {
+    width: 95%;
+    white-space: nowrap;
+    height: calc(25vh + 60px);
+    margin: auto;
+    overflow: scroll;
+    display: block;
+    /* flex-direction: row; */
+    background: #ffffff;
+    box-shadow: 0px 5px 10px 2px #00000066;
+    overflow-y: hidden;
+    border-radius: 30px;
+}
+::-webkit-scrollbar {
+    background-color:transparent;
+    width: 20px;
+}
+::-webkit-scrollbar-button {
+    background-color:transparent;
+    width: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background-color:gray;
+    border-radius: 10px;
+    width: 15px;
+    border: 5px solid transparent;
+    background-clip: padding-box;
+}
+#scrollmenu::-webkit-scrollbar {
+    height: 20px;
+}
+
+#orange {
+    margin-bottom: 30px;
+}
+
+#allQuizzesList {
+    height: auto !important;
+    white-space: nowrap !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+#scrollmenu2 {
+    width: 95%;
+    margin: auto;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 10px;
+    background: #ffffff;
+    box-shadow: 0px 5px 10px 2px #00000066;
+    overflow-y: hidden;
+    border-radius: 30px;
+}
+
+
+
+.card {
+    margin: 1%;
+    width: calc(19%);
+    border-radius: 30px;
+    text-align: left;
+    padding: 30px;
+    height: 20vh;
+    display: inline-block;
+    background-color: #00000011;
+    /* box-shadow: 0px 1px 10px 0px #00000044; */
+
+}
+  
+ 
