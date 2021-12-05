@@ -24,45 +24,26 @@
     </div>
     <div id="interactiveArea">
       <div id="centralArea">
-        <div>
-          <h1 id="term">Logarithm</h1>
-          <button id="dontKnowBtn">DONT KNOW</button>
-        </div>
-        <hr id="cardSplit" />
-        <p id="termLabel">TERM</p>
-        <div id="verticalSplit">
-          <div id="answersContainer">
-            <div class="answers" onclick="makeSelected(this)">
-              <p>
-                a quantity representing the power to which a fixed number (the
-                base) must be raised to produce a given number.
-              </p>
-            </div>
-            <div class="answers">
-              <p>
-                The actual magnitude of a numerical value or measurement,
-                irrespective of its relation to other values.
-              </p>
-            </div>
-            <div class="answers">
-              <p>
-                a line that continually approaches a given curve but does not
-                meet it any finite distance.
-              </p>
-            </div>
-            <div class="answers">
-              <p>
-                the set of all possible inputs of a function
+        <div id="termArea">
+          <h1 id="term"></h1>
+          <button id="dontKnowBtn" onclick="revealAnswers(shownAnswers)">DONT KNOW</button>
 
-              </p>
-              </div>
-          </div>
+          <hr id="cardSplit" />
+          <p id="termLabel">TERM</p>
+        </div>
+        <div id="verticalSplit">
+          <div id="answersContainer"></div>
           <div id="imageContainer">
             <img class="scaledImage"
               src="https://dr282zn36sxxg.cloudfront.net/datastreams/f-d%3A80525656f38f5a7a15ab4dba8c4a08637c010ea86ee45edc22fcf78c%2BIMAGE_TINY%2BIMAGE_TINY.1"
               alt="a"
             />
           </div>
+        </div>
+
+        <div id="progressAreaContainer">
+            <label>Progress:</label>
+            <progress id="progress" value="0" max="0"></progress>
         </div>
       </div>
     </div>

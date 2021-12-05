@@ -88,10 +88,13 @@ p {
 }
 
 #centralArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 75px;
   /* border: 1px solid #efefef; */
   padding: 50px;
-  border-radius: 100px;
+  border-radius: 50px;
   box-shadow: 0px 0px 10px #00000066;
 }
 
@@ -123,13 +126,18 @@ p {
   background-color: inherit;
   text-decoration: underline;
   border: none;
+  border-radius: 5px;
+}
+
+#dontKnowBtn:active {
+  background-color: #00000011;
 }
 
 #cardSplit {
   border-radius: steelblue;
   background-color: steelblue;
   height: 1px;
-  width: 30%;
+  width: 60%;
   margin-left: 0px;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -160,11 +168,45 @@ p {
   /* height: fit-content; */
 }
 
-.selected {
+.correct {
   box-shadow: 0px 0px 3px #009e28;
   background-color: #009e2811;
 }
 
+
+.wrong {
+  box-shadow: 0px 0px 3px #9e0000 !important;
+  background-color: #9e000011 !important;
+}
+
+.selected {
+  box-shadow: 0px 0px 3px #00189e !important;
+  background-color: #001d9e11 !important;
+}
+
+#progressAreaContainer {
+  width: 50%;
+  margin-top: 50px;
+}
+
+#termArea {
+  align-self: start;
+}
+
+#checkBtn {
+  /* min-width: 200px; */
+  /* border-color: #21345f; */
+
+  padding:10px;
+  text-align: center;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 0px 1px #21345f; */
+  border:none;
+  background-color: #21345f;
+  color: white;
+  margin-top: 15px;
+ 
+}
 
 footer {
   height: 75px;
@@ -174,3 +216,4 @@ footer {
   background-color: #e5e5e5;
   color: #ffffff;
 }
+
