@@ -30,21 +30,11 @@ function renderQuestion() {
 }
 
 function revealAnswers(arr) {
-  console.log("called")
-  buffer = ""
   for (let i = 0; i < arr.length; i++) {
-    buffer += `
-    <div class="answers OTHERCLASS" onclick="makeSelected(this)">
-      <p class="unselectable">
-      REPLACE
-      </p>
-    </div>
-    `.replace("REPLACE", arr[i])
-    .replace("OTHERCLASS", (arr[i] == correctAnswer.definitions[0]) ? "correct" : "wrong")
+    let x = document.getElementById(`q${i}`)
+    console.log(x);
+    x.classList.add(arr[i] == correctAnswer.definitions[0] ? "correct" : "wrong")
   }
-
-  document.getElementById("answersContainer").innerHTML = buffer;
-
 
 }
 
@@ -52,7 +42,7 @@ function trueRender(arr) {
   buffer = ""
   for (let i = 0; i < arr.length; i++) {
     buffer += `
-    <div class="answers" onclick="makeSelected(this)">
+    <div class="answers" id="q${i}"onclick="makeSelected(this)">
       <p class="unselectable">
       REPLACE
       </p>

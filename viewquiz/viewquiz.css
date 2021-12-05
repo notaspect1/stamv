@@ -179,8 +179,8 @@ p {
 }
 
 .selected {
-  box-shadow: 0px 0px 3px #00189e !important;
-  background-color: #001d9e11 !important;
+  box-shadow: 0px 0px 3px #00189e;
+  background-color: #001d9e11;
 }
 
 #progressAreaContainer {
