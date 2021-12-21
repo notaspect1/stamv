@@ -4,16 +4,17 @@ let url = "./test.json"
 let numAnswers = 4
 let selectedAnswer = null
 let shownAnswers = []
-let correctAnswer = null
+let currentQuestion = null
+let answersRevealed = false;
 
 fetch(url, {method: 'GET',})
   .then(Response => Response.json())
-  .then(data => doStuff(data))
+  .then(data => start(data))
 
 
 
 
-function doStuff(data) {
+function start(data) {
   questions = data.questions
   document.getElementById("title").innerText = data.title
   document.getElementById("description").innerText = data.description
@@ -23,19 +24,38 @@ function doStuff(data) {
 }
 
 function renderQuestion() {
-  document.getElementById("progress").value = ++currentPosition;
-  correctAnswer = questions[currentPosition]
-  shownAnswers = generate(correctAnswer)
+  currentQuestion = questions[currentPosition]
+  shownAnswers = generate(currentQuestion)
   trueRender(shownAnswers)
+}
+
+function checkBtnBehavior(self) {
+  if (self.innerText == "Next") {
+    answersRevealed = false;
+    self.innerText = "Check"
+    renderQuestion();
+  } else if (self.innerText == "Check") {
+    document.getElementById("progress").value = ++currentPosition
+    revealAnswers(shownAnswers)
+  } else if (self.innerText == "Done") {
+    console.log("done")
+  }
 }
 
 function revealAnswers(arr) {
   for (let i = 0; i < arr.length; i++) {
     let x = document.getElementById(`q${i}`)
     console.log(x);
-    x.classList.add(arr[i] == correctAnswer.definitions[0] ? "correct" : "wrong")
+    x.classList.add(arr[i] == currentQuestion.definitions[0] ? "correct" : "wrong")
   }
 
+  selectedAnswer = null;
+  answersRevealed = true;
+  if (currentPosition != questions.length) {
+    document.getElementById("checkBtn").innerText = "Next";
+  } else {
+    document.getElementById("checkBtn").innerText = "Done";
+  }
 }
 
 function trueRender(arr) {
@@ -44,21 +64,19 @@ function trueRender(arr) {
     buffer += `
     <div class="answers" id="q${i}"onclick="makeSelected(this)">
       <p class="unselectable">
-      REPLACE
+      ${arr[i]}
       </p>
     </div>
-    `.replace("REPLACE", arr[i])
+    `
   }
-
   buffer += `
-    <button onclick="revealAnswers(shownAnswers)" id="checkBtn">
+    <button onclick="checkBtnBehavior(this)" id="checkBtn" disabled=${selectedAnswer == null}>
       Check
     </button>
   `
 
-  document.getElementById("term").innerText = correctAnswer.term
+  document.getElementById("term").innerText = currentQuestion.term
   document.getElementById("answersContainer").innerHTML = buffer;
-
 }
 
 function generate(cq) {
@@ -79,6 +97,7 @@ function generate(cq) {
 
 
 function makeSelected(id) {
+  document.getElementById("checkBtn").disabled = false;
   if (selectedAnswer != null) {
     selectedAnswer.classList.remove("selected")
   }

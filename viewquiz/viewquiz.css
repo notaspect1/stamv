@@ -169,8 +169,8 @@ p {
 }
 
 .correct {
-  box-shadow: 0px 0px 3px #009e28;
-  background-color: #009e2811;
+  box-shadow: 0px 0px 3px #009e28 !important;
+  background-color: #009e2811 !important;
 }
 
 
@@ -205,7 +205,12 @@ p {
   background-color: #21345f;
   color: white;
   margin-top: 15px;
- 
+}
+
+#checkBtn:disabled {
+  background-color: #21345f66;
+  cursor: not-allowed;
+
 }
 
 footer {
