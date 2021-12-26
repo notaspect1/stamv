@@ -21,16 +21,13 @@ p {
 }
 
 
-.header {
-    background: url('../images/main.png') no-repeat scroll center top transparent;
-    height: 500px;
-    width: 100%;
-    z-index: 0;
+#header {
+    background: url('../images/main.png') no-repeat center top;
+    background-attachment: fixed;
+    background-size: min(100vw);
+    height: 30vw;
     padding: 0;
     margin: 0;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-position: center 0px;
 }​
 
 /* menu bar */
