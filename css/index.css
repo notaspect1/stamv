@@ -53,51 +53,39 @@ img{
     background-size:cover;
     background-origin:padding-box;
     background-position:center;
-}
-/* first section */
-#study1 {
-    float: left ;
-}
-#mission{
-    float: left;
-}
-
-#ourmission {
-    width: 1000px ;
-    max-width: 100% ;
-    margin-left: auto ;
-    margin-right: auto ;
-}
-/* second section */
-#study2 {
-    float: left ;
-}
-#programs{
-    float: left;
-}
-#programswemake {
-    width: 1100px ;
-    max-width: 100% ;
-    margin-left: auto ;
-    margin-right: auto ;
-}
-/* third section */
-#study3 {
-    float: left ;
-}
-#motive{
-    float: left;
-}
-#ourmotive {
-    width: 1000px ;
-    max-width: 100% ;
-    margin-left: auto ;
-    margin-right: auto ;
+    margin: 20px;
 }
 
 footer {
-text-align: center;
-padding: 3px;
-background-color: #E5E5E5;
-color: #FFFFFF;
+    text-align: center;
+    padding: 3px;
+    background-color: #E5E5E5;
+    color: #FFFFFF;
+}
+
+.card {
+
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    align-self: center;
+}
+
+.verticalBar {
+    /* width: 1px;  */
+    /* height: 20px;  */
+    display: inline-block;
+    font-family:'Times New Roman', Times, serif; 
+    color:rgb(252, 163, 17); 
+    font-size: 30px;
+}
+
+#center {
+    margin: auto;
+    width:  90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
