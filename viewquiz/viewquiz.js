@@ -5,7 +5,7 @@ let numAnswers = 4
 let selectedAnswer = null
 let shownAnswers = []
 let currentQuestion = null
-let answersRevealed = false;
+let answersRevealed = false
 
 fetch(url, {method: 'GET',})
   .then(Response => Response.json())
@@ -19,7 +19,7 @@ function start(data) {
   document.getElementById("title").innerText = data.title
   document.getElementById("description").innerText = data.description
   console.log(questions)
-  document.getElementById("progress").max = questions.length;
+  document.getElementById("progress").max = questions.length
   renderQuestion()
 }
 
@@ -31,38 +31,40 @@ function renderQuestion() {
 
 function checkBtnBehavior(self) {
   if (self.innerText == "Next") {
-    answersRevealed = false;
+    answersRevealed = false
     self.innerText = "Check"
-    renderQuestion();
+    renderQuestion()
   } else if (self.innerText == "Check") {
     document.getElementById("progress").value = ++currentPosition
     revealAnswers(shownAnswers)
   } else if (self.innerText == "Done") {
     console.log("done")
+    document.getElementById("centralArea").innerHTML = ""
   }
 }
 
 function revealAnswers(arr) {
   for (let i = 0; i < arr.length; i++) {
     let x = document.getElementById(`q${i}`)
-    console.log(x);
+    console.log(x)
     x.classList.add(arr[i] == currentQuestion.definitions[0] ? "correct" : "wrong")
   }
 
-  selectedAnswer = null;
-  answersRevealed = true;
+  selectedAnswer = null
+  answersRevealed = true
   if (currentPosition != questions.length) {
-    document.getElementById("checkBtn").innerText = "Next";
+    document.getElementById("checkBtn").innerText = "Next"
   } else {
-    document.getElementById("checkBtn").innerText = "Done";
+    document.getElementById("checkBtn").innerText = "Done"
   }
 }
 
+// actually draws the it 
 function trueRender(arr) {
   buffer = ""
   for (let i = 0; i < arr.length; i++) {
     buffer += `
-    <div class="answers" id="q${i}"onclick="makeSelected(this)">
+    <div class="answers" id="q${i}" onclick="makeSelected(this)">
       <p class="unselectable">
       ${arr[i]}
       </p>
@@ -74,9 +76,8 @@ function trueRender(arr) {
       Check
     </button>
   `
-
   document.getElementById("term").innerText = currentQuestion.term
-  document.getElementById("answersContainer").innerHTML = buffer;
+  document.getElementById("answersContainer").innerHTML = buffer
 }
 
 function generate(cq) {
@@ -88,24 +89,35 @@ function generate(cq) {
       arr.push(questions[x].definitions[0])
     }
     else {
-      i--;
+      i--
     }
   }
+  console.log("generate")
+  console.log(arr)
   return arr
 }
 
 
-
 function makeSelected(id) {
-  document.getElementById("checkBtn").disabled = false;
-  if (selectedAnswer != null) {
-    selectedAnswer.classList.remove("selected")
-  }
-  selectedAnswer = id
-  if (id.classList.contains("selected")) {
-    id.classList.remove("selected")
-  } else {
-    id.classList.add("selected")
-  }
   console.log(id)
+  // now that they have selected an answer to check they can now check it
+  document.getElementById("checkBtn").disabled = false
+  if (selectedAnswer != null) {
+    // if they are changing answers the other is no longer selected
+    selectedAnswer.classList.remove("selected")
+  } 
+
+  if (selectedAnswer == id) {
+    // if they are selecting the same answer as before it deselcts it
+    id.classList.remove("selected")
+    document.getElementById("checkBtn").disabled = true
+    selectedAnswer = null
+  } else {
+    selectedAnswer = id
+    // if they are clicking on an all ready selected answer we deselect it which removes the ability to check
+    if (id.classList.contains("selected")) {
+    } else {
+      id.classList.add("selected")
+    }
+  }
 }
