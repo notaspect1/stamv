@@ -63,6 +63,7 @@ img{
     text-align: center;
 }
 #whoarewe {
+    margin-top: 8%;
     width: 1000px ;
     max-width: 100% ;
     margin-left: auto ;
@@ -77,6 +78,7 @@ img{
 }
 
 #format1 {
+    margin-top: 10%;
     width: 1000px ;
     max-width: 100% ;
     margin-left: auto ;
