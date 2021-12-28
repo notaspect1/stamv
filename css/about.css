@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'Tahoma';
-    font-style: normal;
-    font-weight: 300;
-}
 body{
     font-family: Roboto;
     font-weight: 300;
@@ -21,16 +16,14 @@ p {
 }
 
 
-.header {
-    background: url('../images/about.png') no-repeat scroll center top transparent;
-    height: 500px;
-    width: 100%;
-    z-index: 0;
+#header {
+    background: url('../images/about.png') no-repeat center top;
+    background-attachment: fixed;
+    background-size: min(100vw);
+    height: 30vw;
+    /* width: 100%; */
     padding: 0;
     margin: 0;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-position: center 0px;
 }​
 
 /* menu bar */
@@ -56,6 +49,7 @@ img{
     background-size:cover;
     background-origin:padding-box;
     background-position:center;
+    margin: 20px;
 }
 /* first section */
 #text {
@@ -69,36 +63,38 @@ img{
     margin-right: auto ;
 }
 /* first section */
-#image1{
-    float:left;
-}
-#text1{
-    float: left;
-}
 
-#format1 {
-    width: 1000px ;
-    max-width: 100% ;
-    margin-left: auto ;
-    margin-right: auto ;
-}
-/* second section */
-#image2 {
-    float: left ;
-}
-#text2{
-    float: left;
-}
-#format2 {
-    width: 1100px ;
-    max-width: 100% ;
-    margin-left: auto ;
-    margin-right: auto ;
-}
 
 footer {
-text-align: center;
-padding: 3px;
-background-color: #E5E5E5;
-color: #FFFFFF;
+    text-align: center;
+    padding: 3px;
+    background-color: #E5E5E5;
+    color: #FFFFFF;
+}
+
+.card {
+
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    align-self: center;
+}
+
+.verticalBar {
+    /* width: 1px;  */
+    /* height: 20px;  */
+    display: inline-block;
+    font-family:'Times New Roman', Times, serif; 
+    color:rgb(252, 163, 17); 
+    font-size: 30px;
+}
+
+#center {
+    margin: auto;
+    width:  90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
