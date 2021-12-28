@@ -1,6 +1,6 @@
 let questions = []
 let currentPosition = 0
-let url = "./test.json"
+let url = "../testdata/test.json"
 let numAnswers = 4
 let selectedAnswer = null
 let shownAnswers = []
