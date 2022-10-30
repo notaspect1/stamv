@@ -1,6 +1,6 @@
 //There should be a function to fill in previous questions witht he same id im thinking base 64 8 digit thing
 
-let quizId = 1234 //This is temporary
+let quizId = 1234 //This is temporary 
 let QuizName = ""
 let Description = ""
 let Visibility = "Public" 
