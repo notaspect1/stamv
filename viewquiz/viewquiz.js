@@ -95,7 +95,7 @@ function generate(cq) {
   console.log("generate")
   console.log(arr)
   return arr
-}
+} 
 
 
 function makeSelected(id) {
