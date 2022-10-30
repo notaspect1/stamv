@@ -10,7 +10,7 @@ let currentQuestion = null
 let answersRevealed = false
 let answeringWithDefinition = true
 
-fetch(url, { method: 'GET', })
+fetch(url, { method: 'GET', }) 
     .then(Response => Response.json())
     .then(data => start(data))
     
