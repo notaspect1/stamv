@@ -10,7 +10,7 @@ fetch(url, {method: 'GET',})
     for(i =0; i<recentData.length; i++){
       document.getElementById("title"+(i+1)).innerText = recentData[i].title;
       document.getElementById("description"+(i+1)).innerText = recentData[i].desc;
-      //others are recentData[i].mastered, recentData[i].learned, recentData[i].unkown
+      //others are, recentData[i].mastered, recentData[i].learned, recentData[i].unkown
     }
     
   }
